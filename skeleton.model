@@ -43,7 +43,7 @@ rule step for state in roommates {
     GoingToStore {
       state = ReturningFromStore {
         carrying: urandomRange(1, 8);
-        state = Hungry;
+        notePresent = False;
       };
     }
 
@@ -52,7 +52,7 @@ rule step for state in roommates {
         state = Failed;
       } else {
         bananas += bag.carrying;
-        notePresent = False;
+        notePresent = True;
         state = Hungry;
       }
     }
